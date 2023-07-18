@@ -1,5 +1,7 @@
 ## understanding linux 0.11 internal
 
+
+### Booting 
 - everything is start from 0xFFFF0 => boots/bootsect.s  
     - it start with assembly/hardware language not c language cause ram and cpu even didn't start.  
     - As a general rule, the Linux kernel is installed in RAM starting from the physical address 0x00100000  
@@ -20,6 +22,8 @@ Example of BIOS-provided physical addresses map
 | 0x07ff3000 | 0x07ffffff |ACPI NVS  |
 | 0xffff0000 | 0xffffffff |Reserved  |
 
+
+- in modern linux it start with start_kernel() https://elixir.bootlin.com/linux/v4.14.320/source/init/main.c#L512
 
 
 
