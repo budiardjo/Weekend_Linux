@@ -22,11 +22,9 @@ Example of BIOS-provided physical addresses map
 | 0x07ff3000 | 0x07ffffff |ACPI NVS  |
 | 0xffff0000 | 0xffffffff |Reserved  |
 
+   - memory from 0xF0000-0xFFFFF is reserved for the system BIOS. Also, since system BIOS has become more complex over the years, many platforms also use 0xE0000-0xEFFFF for system BIOS
 
-- in modern linux it start with start_kernel() https://elixir.bootlin.com/linux/v4.14.320/source/init/main.c#L512
-
-
-
+   - in modern linux it start with start_kernel() https://elixir.bootlin.com/linux/v4.14.320/source/init/main.c#L512
 
 
 
@@ -34,8 +32,20 @@ Example of BIOS-provided physical addresses map
 
 
 
-#### Source Book
+
+
+
+#### Some useful source and book
 - The Art of Linux Kernel  
 - Computer Architecture  
 - Understanding The Linux
 - MINIX3
+- uefi.org/uefi
+- BIOS Boot Specification Version 1.01
+- github.com/rhboot/grub2
+- https://github.com/rhboot/grub2/blob/fedora-39/grub-core/boot/i386/pc/boot.S
+- https://0xax.gitbooks.io/linux-insides/content/
+- https://www.kernel.org/doc/Documentation/x86/boot.txt
+- https://www.linuxfromscratch.org/
+- https://0pointer.de/blog/projects/systemd.html
+
