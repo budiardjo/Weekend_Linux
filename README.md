@@ -23,22 +23,26 @@ Example of BIOS-provided physical addresses map
 | 0xffff0000 | 0xffffffff |Reserved  |
 
    - memory from 0xF0000-0xFFFFF is reserved for the system BIOS. Also, since system BIOS has become more complex over the years, many platforms also use 0xE0000-0xEFFFF for system BIOS
-
-   - in modern linux it start with start_kernel() https://elixir.bootlin.com/linux/v4.14.320/source/init/main.c#L512
-
-
-
-
+   - When an Intel architecture boot-strap processor (BSP) powers on, the first
+address fetched and executed is at physical address 0xFFFFFFF0, also known as the reset vector. This accesses the ROM or flash device at the top of the ROM: 0x10. The boot loader must always contain a jump to the initialization code in these top 16 bytes.
+    - FFFF0H through FFFFFH(16bytes) these areas are used for interrupt and system reset processing 8086 and 8088 application systems should not use these areas for any other system purposes
+  - in modern linux it start with start_kernel() https://elixir.bootlin.com/linux/v4.14.320/source/init/main.c#L512
 
 
 
 
 
 
-#### Some useful source and book
+
+
+
+
+#### Some source and book
 - The Art of Linux Kernel  
 - Computer Architecture  
 - Understanding The Linux
+- Assembly Language Step by Step
+- Operating Systems Internals and Design Principles
 - MINIX3
 - uefi.org/uefi
 - BIOS Boot Specification Version 1.01
@@ -48,4 +52,7 @@ Example of BIOS-provided physical addresses map
 - https://www.kernel.org/doc/Documentation/x86/boot.txt
 - https://www.linuxfromscratch.org/
 - https://0pointer.de/blog/projects/systemd.html
+- https://lwn.net/Articles/250967/
+- https://linux-mm.org/LinuxMM
+- https://kernelnewbies.org/KernelProjects
 
