@@ -78,6 +78,7 @@ address fetched and executed is at physical address 0xFFFFFFF0, also known as th
 - BIOS Boot Specification Version 1.01
 - github.com/rhboot/grub2
 - [unix source code](http://v6.cuzuco.com/v6.pdf)
+- [linux,unix, bsd tour](https://www.tamacom.com/tour/kernel/unix/)
 - https://github.com/rhboot/grub2/blob/fedora-39/grub-core/boot/i386/pc/boot.S
 - https://0xax.gitbooks.io/linux-insides/content/
 - https://www.kernel.org/doc/Documentation/x86/boot.txt
