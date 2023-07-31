@@ -1,5 +1,10 @@
 ## understanding linux 0.11 internal
 
+```
+    The current Linux kernel runs into the millions of lines of code, add to that the other critical parts of a modern operating system (the compiler, assembler and system libraries) and your code base becomes unimaginable. Further still, add a University level operating systems course (or four), some good reference manuals, two or three years of C experience and, just maybe, you might be able to figure out where to start looking to make sense of it all. - Ian Wienand
+
+```
+
 
 ### Booting 
 - everything is start from 0xFFFF0 => boots/bootsect.s  
@@ -9,6 +14,7 @@
     - Page frame 0 is used by BIOS to store the system hardware configuration
 detected during the Power-On Self-Test (POST); the BIOS of many laptops,
 moreover, writes data on this page frame even after the system is initialized.  
+    - For example, registers that are 32 bits wide can hold addresses in a register range from 0x00000000 to 0xFFFFFFF 
     - Physical addresses ranging from 0x000a0000 to 0x000fffff are usually reserved to BIOS routines and to map the internal memory of ISA graphics cards. This area
 is the well-known hole from 640 KB to 1 MB in all IBM-compatible PCs
 
@@ -37,6 +43,30 @@ address fetched and executed is at physical address 0xFFFFFFF0, also known as th
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Tools
+- ptrace
+ 
+
 #### Some source and book
 - The Art of Linux Kernel  
 - Computer Architecture  
@@ -47,6 +77,7 @@ address fetched and executed is at physical address 0xFFFFFFF0, also known as th
 - uefi.org/uefi
 - BIOS Boot Specification Version 1.01
 - github.com/rhboot/grub2
+- [unix source code](http://v6.cuzuco.com/v6.pdf)
 - https://github.com/rhboot/grub2/blob/fedora-39/grub-core/boot/i386/pc/boot.S
 - https://0xax.gitbooks.io/linux-insides/content/
 - https://www.kernel.org/doc/Documentation/x86/boot.txt
@@ -55,4 +86,12 @@ address fetched and executed is at physical address 0xFFFFFFF0, also known as th
 - https://lwn.net/Articles/250967/
 - https://linux-mm.org/LinuxMM
 - https://kernelnewbies.org/KernelProjects
-
+- https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-vol-1-manual.pdf
+- https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-system-programming-manual-325384.pdf
+- https://yasm.tortall.net/
+- https://www.bottomupcs.com/
+- really helpful one, https://github.com/ianw/bottomupcs/tree/master
+- C Programming Languages
+    - http://infolab.stanford.edu/~ullman/focs.html
+    - https://www.cs.rit.edu/~ats/books/ooc.pdf
+    - https://www.cs.rit.edu/~ats/books/
